@@ -6,27 +6,19 @@ body {
   border-spacing: 5px;
 }
 
-table, td {
-  margin: 2em auto;
+table, th, td {
   border: 1px solid black;
-  padding: 1em; 
-  border-spacing: ;
-}
-
-
-tr {
-  border-right : 1px solid black;
   padding: 1em;
-  margin: 1em;
 }
 
- th {
-  border-right: 1px solid black;
-  padding: 1em;
-  margin: 1em;
+table {
+  margin: 5em auto;
+  width: 80%;
+  border-collapse: collapse;
 }
 
-th:last-child {
-  border: none;
+th {
+  font-size: 1.2em;
 }
+
 
