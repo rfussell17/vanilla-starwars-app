@@ -9,24 +9,25 @@ btn.addEventListener("click", function () {
 
 async function getData() {
   for (let i = 1; i <= 10; i++) {
-    await fetch(`https://swapi.dev/api/people/${i}`)
-      .then((res) => res.json())
-      .then((json) => {
-        const row = table.insertRow();
-
-        const birthNameData = row.insertCell();
-        birthNameData.innerHTML = json.name;
-
-        const birthYearData = row.insertCell();
-        birthYearData.innerHTML = json.birth_year;
-
-        const heightData = row.insertCell();
-        heightData.innerHTML = json.height;
-
-        const massData = row.insertCell();
-        massData.innerHTML = json.mass;
-      });
-
-    document.body.appendChild(table);
+    const res = await fetch(`https://swapi.dev/api/people/${i}`);
+    if(res.ok){
+      const data = await res.json();
+      const row = table.insertRow();
+  
+      const birthNameData = row.insertCell();
+      birthNameData.innerHTML = data.name;
+  
+      const birthYearData = row.insertCell();
+      birthYearData.innerHTML = data.birth_year;
+  
+      const heightData = row.insertCell();
+      heightData.innerHTML = data.height;
+  
+      const massData = row.insertCell();
+      massData.innerHTML = data.mass;
+    } else {
+      console.error(`Error: ${res.status}`)
+    }
   }
+  document.body.appendChild(table);
 }
