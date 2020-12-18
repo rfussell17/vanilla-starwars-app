@@ -9,7 +9,7 @@ btn.addEventListener("click", function () {
 
 async function getData() {
   for (let i = 1; i <= 10; i++) {
-    fetch(`https://swapi.dev/api/people/${i}`)
+    await fetch(`https://swapi.dev/api/people/${i}`)
       .then((res) => res.json())
       .then((json) => {
         const row = table.insertRow();
