@@ -1,32 +1,32 @@
+const table = document.querySelector("table");
+const btn = document.querySelector("#load");
 
-const table = document.querySelector('table')
-  for(let i = 1; i <= 50; i++){
+btn.addEventListener("click", function () {
+  getData();
+  table.classList.remove("hidden");
+  btn.style.display = "none";
+});
 
-  const url = fetch(`https://swapi.dev/api/people/${i}`)
-  .then( res => res.json())
-  .then( json => {
+async function getData() {
+  for (let i = 1; i <= 10; i++) {
+    fetch(`https://swapi.dev/api/people/${i}`)
+      .then((res) => res.json())
+      .then((json) => {
+        const row = table.insertRow();
 
-  
+        const birthNameData = row.insertCell();
+        birthNameData.innerHTML = json.name;
 
-    const row = table.insertRow()
+        const birthYearData = row.insertCell();
+        birthYearData.innerHTML = json.birth_year;
 
-    const birthNameData = row.insertCell()
-    birthNameData.innerHTML = json.name
+        const heightData = row.insertCell();
+        heightData.innerHTML = json.height;
 
-    const birthYearData = row.insertCell()
-    birthYearData.innerHTML = json.birth_year
+        const massData = row.insertCell();
+        massData.innerHTML = json.mass;
+      });
 
-
-    const heightData =  row.insertCell()
-    heightData.innerHTML = json.height
-
-
-    const massData =  row.insertCell()
-    massData.innerHTML = json.mass
-  })
-
-
-
-    document.body.appendChild(table) 
-  
+    document.body.appendChild(table);
+  }
 }
