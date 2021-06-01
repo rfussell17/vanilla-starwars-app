@@ -8,7 +8,7 @@
 This is a small app that utilizes fetch to grab data from the SWAPI (Star Wars API). The main purpose for this project was to re-familiarize myself with APIs. This included using fetch, asych/await, iterating over data, inserting cells and rows in a table via JS, appending, adding and removing classLists and event listeners.
 
 <br>
-[View Here](https://rfussell17.github.io/vanilla-starwars-app/)
+(https://rfussell17.github.io/vanilla-starwars-app/ "View here")
 <br>
 
  <img src="starwars.gif">
