@@ -12,8 +12,6 @@ This is a small app that utilizes fetch to grab data from the SWAPI (Star Wars A
 
  Try it out here: [Starwars-App](https://rfussell17.github.io/vanilla-starwars-app/)
 
- Try it out here: [Expense-Tracker](https://rfussell17.github.io/expense-tracker-app/)
-
  <img src="starwars.gif">
 
 <br>
